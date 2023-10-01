@@ -40,7 +40,7 @@ namespace Practica05_RogelioPerez
             }
 
             //crear una cadena con los datos 
-            string datos = $"Nombres: {nombres}\r\nApellidos:{apellidos}\r\nTelefonos:{telefonos}\r\nEdades:{edades} años\r\nEstaturas{estaturas}cm\r\nGenero:{genero}";
+            string datos = $"Nombres: {nombres}\r\nApellidos:{apellidos}\r\nTelefonos:{telefonos}\r\nEdades:{edades} años\r\nEstaturas:{estaturas}cm\r\nGenero:{genero}\r\n";
 
             //Guardar los datos en un archivo de texto
             string RutaArchivo = "c:/Users/Rogers/Documents/datos.text";            
@@ -69,6 +69,18 @@ namespace Practica05_RogelioPerez
             txt_Edad.Clear();
             txt_Estatura.Clear();
             txt_Telefono.Clear();           
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Seguro que quieres cancelar los datos?:\n\n" , "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            txt_Nombre.Clear();
+            txt_Apellidos.Clear();
+            txt_Edad.Clear();
+            txt_Estatura.Clear();
+            txt_Telefono.Clear();
+            MessageBox.Show("Se eliminaron los datos exitosamente");
+
         }
     }
 }
