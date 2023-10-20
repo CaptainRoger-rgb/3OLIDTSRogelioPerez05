@@ -18,7 +18,7 @@ namespace Practica05_RogelioPerez
     public partial class Form1 : Form
     {
         //Datos de conexion a MySql (Xamp)
-        string conexionSql = "Server=localhost;Port=3306;Database=programacion_avanzada;Uid=root:Pwd=;";
+        string conexionSql = "Server=localhost;Port=3306;Database=programacion_avanzada;Uid=root;Pwd=;";
         public Form1()
         {
             //agregar controladores de eventos TexChanged a los campos
@@ -46,8 +46,9 @@ namespace Practica05_RogelioPerez
                     command.Parameters.AddWithValue("@Estatura", estatura);
                     command.Parameters.AddWithValue("@Telefono", telefono);
                     command.Parameters.AddWithValue("@Genero", genero);
-                }
 
+                    command.ExecuteNonQuery();
+                }
                 conection.Close();
             }
         }
@@ -188,7 +189,7 @@ namespace Practica05_RogelioPerez
                 if (!EsEnteroValidos10Digitos(input))
                 {
                     MessageBox.Show("Por favor, ingrese una teléfono válida de 10 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox.Clear();
+                    //textBox.Clear();
                 }
             }
             else if (!EsEnteroValidos10Digitos(input))
